@@ -1,7 +1,6 @@
 "use strict";
 
 const fs = require("fs");
-const path = require("path");
 const BuildToolDetector = require("../lib/detector/build-tool-detector");
 
 // Mock fs module

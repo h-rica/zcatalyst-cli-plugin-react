@@ -18,7 +18,7 @@
 		"lint:src": "eslint --ext .js lib/ --fix --color",
 		"lint:unit": "eslint --ext .js tests/ --fix --color",
 		"lint": "run-p lint:src lint:unit",
-		"test": "run-s lint:unit test:unit",
+		"test": "npm run test:unit",
 		"prepare": "npm run lint:src",
 		"prepublishOnly": "npm run lint:src",
 		"preversion": "npm run lint:src",
