@@ -51,7 +51,11 @@ describe('BuildToolDetector', () => {
 				dependencies: { 'react-scripts': '^5.0.0', react: '^18.0.0' }
 			};
 
-			fs.existsSync.mockReturnValue(true);
+			fs.existsSync.mockImplementation((filePath) => {
+				// Return true only for package.json, false for Vite config files
+				if (filePath.includes('package.json')) return true;
+				return false;
+			});
 			fs.readFileSync.mockReturnValue(JSON.stringify(mockPackageJson));
 
 			const result = detector.detect();
@@ -64,7 +68,11 @@ describe('BuildToolDetector', () => {
 				devDependencies: { webpack: '^5.0.0' }
 			};
 
-			fs.existsSync.mockReturnValue(true);
+			fs.existsSync.mockImplementation((filePath) => {
+				// Return true only for package.json, false for Vite config files
+				if (filePath.includes('package.json')) return true;
+				return false;
+			});
 			fs.readFileSync.mockReturnValue(JSON.stringify(mockPackageJson));
 
 			const result = detector.detect();
@@ -94,7 +102,11 @@ describe('BuildToolDetector', () => {
 				dependencies: { react: '^18.0.0' }
 			};
 
-			fs.existsSync.mockReturnValue(true);
+			fs.existsSync.mockImplementation((filePath) => {
+				// Return true only for package.json, false for all config files
+				if (filePath.includes('package.json')) return true;
+				return false;
+			});
 			fs.readFileSync.mockReturnValue(JSON.stringify(mockPackageJson));
 
 			expect(() => detector.detect()).toThrow('No supported build tool detected');
@@ -127,7 +139,11 @@ describe('BuildToolDetector', () => {
 				dependencies: { 'react-scripts': '^5.0.0', react: '^18.0.0' }
 			};
 
-			fs.existsSync.mockReturnValue(true);
+			fs.existsSync.mockImplementation((filePath) => {
+				// Return true only for package.json, false for Vite config files
+				if (filePath.includes('package.json')) return true;
+				return false;
+			});
 			fs.readFileSync.mockReturnValue(JSON.stringify(mockPackageJson));
 
 			const details = detector.getDetails();
