@@ -124,7 +124,7 @@ This project is a fork of the [official zcatalyst-cli-plugin-react](https://www.
 
 ### This Fork
 - **Package**: `@hrica/zcatalyst-cli-plugin-react`
-- **Maintainer**: Harivonjy Rica
+- **Maintainer**: Harivonjy Rica <contact.harivonjy@gmail.com>
 - **Key Enhancement**: Added Vite support alongside existing Webpack support
 - **Architecture**: Introduced adapter pattern for multi-build-tool support
 - **Compatibility**: 100% backward compatible with original plugin
