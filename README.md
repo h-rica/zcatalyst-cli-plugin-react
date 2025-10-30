@@ -4,15 +4,25 @@
     </a>
 </center>
 
-<center><h1>Catalyst React plugin</h1></center>
+<center><h1>Catalyst React Plugin (Modernized)</h1></center>
 
 ![catalyst](https://img.shields.io/badge/%E2%9A%A1-catalyst-blue.svg)
-![npm](https://img.shields.io/npm/v/zcatalyst-cli-plugin-react.svg?color=blue)
-![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/zcatalyst-cli-plugin-react.svg)
-![license](https://img.shields.io/npm/l/zcatalyst-cli-plugin-react.svg?color=brightgreen)
+![npm](https://img.shields.io/npm/v/@hr/zcatalyst-cli-plugin-react.svg?color=blue)
+![license](https://img.shields.io/npm/l/@hr/zcatalyst-cli-plugin-react.svg?color=brightgreen)
+![build-tools](https://img.shields.io/badge/build--tools-Vite%20%7C%20Webpack-orange)
 <br>
 
-The official plugin for [Catalyst CLI](https://www.npmjs.com/package/zcatalyst-cli) to develop and deploy [React](https://reactjs.org/) Applications with [Catalyst](https://zoho.com/catalyst).
+> **Note**: This is a fork of the [official zcatalyst-cli-plugin-react](https://www.npmjs.com/package/zcatalyst-cli-plugin-react) from the Zoho Catalyst Team, modernized to support both **Vite** and **Webpack** build tools.
+
+A modernized React plugin for [Catalyst CLI](https://www.npmjs.com/package/zcatalyst-cli) with support for both **Vite** and **Webpack** build tools. Develop and deploy [React](https://reactjs.org/) applications with [Catalyst](https://zoho.com/catalyst) using modern or traditional build tools.
+
+## Why This Fork?
+
+The official plugin only supports Webpack/Create React App. This fork adds:
+- ✨ **Vite Support** - Fast, modern build tool with HMR
+- 🔄 **Automatic Detection** - Seamlessly works with both Vite and Webpack
+- 🏗️ **Adapter Architecture** - Extensible design for future build tools
+- 📦 **Full Backward Compatibility** - Existing Webpack projects work without changes
 <br>
 
 ## Plugin Capabilities
@@ -48,7 +58,7 @@ npm create vite@latest my-app -- --template react-ts
 
 # Install the plugin
 cd my-app
-npm install zcatalyst-cli-plugin-react --save-dev
+npm install @hr/zcatalyst-cli-plugin-react --save-dev
 
 # Configure catalyst.json
 # The plugin will automatically detect Vite
@@ -65,14 +75,14 @@ The plugin can be installed in the global NPM **_node_modules_** directory and c
 
 **Installation**
 ```bash
-npm install zcatalyst-cli-plugin-react -g
+npm install @hr/zcatalyst-cli-plugin-react -g
 ```
 **_catalyst.json_**
 ```json
 {
     "client": {
         "source": "react-app",
-        "plugin": "zcatalyst-cli-plugin-react"
+        "plugin": "@hr/zcatalyst-cli-plugin-react"
     }
 }
 ```
@@ -83,7 +93,7 @@ The plugin can be installed in the local **_node_modules_** directory of the Rea
 **Installation**
 ```bash
 # to be executed within the React App directory
-npm install zcatalyst-cli-plugin-react --save-dev
+npm install @hr/zcatalyst-cli-plugin-react --save-dev
 ```
 
 **_catalyst.json_**
@@ -91,7 +101,7 @@ npm install zcatalyst-cli-plugin-react --save-dev
 {
     "client": {
         "source": "react-app",
-        "plugin": "react-app/node_modules/zcatalyst-cli-plugin-react"
+        "plugin": "react-app/node_modules/@hr/zcatalyst-cli-plugin-react"
     }
 }
 ```
@@ -100,3 +110,56 @@ npm install zcatalyst-cli-plugin-react --save-dev
 
 
 
+
+
+## Credits and Acknowledgments
+
+This project is a fork of the [official zcatalyst-cli-plugin-react](https://www.npmjs.com/package/zcatalyst-cli-plugin-react) created and maintained by the **Zoho Catalyst Team**.
+
+### Original Project
+- **Package**: `zcatalyst-cli-plugin-react`
+- **Author**: Catalyst (https://www.zoho.com/catalyst/)
+- **Repository**: Official Zoho Catalyst CLI Plugin for React
+- **License**: MIT
+
+### This Fork
+- **Package**: `@hr/zcatalyst-cli-plugin-react`
+- **Maintainer**: Harivonjy Rica
+- **Key Enhancement**: Added Vite support alongside existing Webpack support
+- **Architecture**: Introduced adapter pattern for multi-build-tool support
+- **Compatibility**: 100% backward compatible with original plugin
+
+### What's Different?
+
+This fork extends the original plugin with:
+- ✨ Vite build tool support
+- 🔄 Automatic build tool detection
+- 🏗️ Modular adapter architecture
+- 📚 Enhanced documentation
+- 🧪 Comprehensive integration tests
+
+All original Webpack/Create React App functionality remains intact and unchanged.
+
+### Contributing
+
+Contributions are welcome! If you'd like to contribute:
+1. Fork this repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+### License
+
+MIT License - Same as the original project
+
+### Support
+
+- **Issues**: [GitHub Issues](https://github.com/hr/zcatalyst-cli-plugin-react/issues)
+- **Documentation**: [docs/](docs/)
+- **Original Plugin**: [zcatalyst-cli-plugin-react](https://www.npmjs.com/package/zcatalyst-cli-plugin-react)
+- **Catalyst Platform**: [Zoho Catalyst](https://www.zoho.com/catalyst/)
+
+---
+
+**Disclaimer**: This is an independent fork and is not officially affiliated with or endorsed by Zoho Corporation or the Catalyst Team. For the official plugin, please use [zcatalyst-cli-plugin-react](https://www.npmjs.com/package/zcatalyst-cli-plugin-react).
