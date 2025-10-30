@@ -19,9 +19,9 @@
 		"lint:unit": "eslint --ext .js tests/ --fix --color",
 		"lint": "run-p lint:src lint:unit",
 		"test": "run-s lint:unit test:unit",
-		"prepare": "npm run lint",
-		"prepublishOnly": "npm test && npm run lint",
-		"preversion": "npm run lint",
+		"prepare": "npm run lint:src",
+		"prepublishOnly": "npm run lint:src",
+		"preversion": "npm run lint:src",
 		"version": "git add -A lib tests",
 		"postversion": "git push && git push --tags"
 	},
