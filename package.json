@@ -1,8 +1,18 @@
 {
-	"name": "zcatalyst-cli-plugin-react",
-	"version": "0.0.4",
-	"description": "Official react plugin for zcatalyst-cli",
+	"name": "@hr/zcatalyst-cli-plugin-react",
+	"version": "1.0.0",
+	"description": "Fork of official zcatalyst-cli-plugin-react from Zoho Catalyst Team, modernized with Vite and Webpack support",
 	"main": "lib/index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hr/zcatalyst-cli-plugin-react.git"
+	},
+	"bugs": {
+		"url": "https://github.com/hr/zcatalyst-cli-plugin-react/issues"
+	},
 	"scripts": {
 		"test:unit": "jest --config jest.config.js",
 		"lint:src": "eslint --ext .js lib/ --fix --color",
@@ -28,10 +38,16 @@
 		"zcatalyst",
 		"react",
 		"plugin",
-		"reactjs"
+		"reactjs",
+		"vite",
+		"webpack",
+		"build-tool",
+		"modernization",
+		"fork",
+		"zcatalyst-cli-plugin-react"
 	],
-	"author": "Catalyst (https://www.zoho.com/catalyst/)",
-	"homepage": "https://www.zoho.com/catalyst/",
+	"author": "Harivonjy Rica <contact.harivonjy@gmail.com>",
+	"homepage": "https://github.com/hr/zcatalyst-cli-plugin-react#readme",
 	"license": "MIT",
 	"devDependencies": {
 		"eslint": "^8.5.0",
@@ -45,7 +61,12 @@
 		"react-scripts": "^5.0.0"
 	},
 	"files": [
-		"lib/**/*"
+		"lib/**/*",
+		"README.md",
+		"LICENSE",
+		"FORK-NOTICE.md",
+		"CHANGELOG.md",
+		"docs/**/*"
 	],
 	"peerDependencies": {
 		"react": ">= 16",
