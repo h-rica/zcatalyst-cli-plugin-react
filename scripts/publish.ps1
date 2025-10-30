@@ -1,18 +1,18 @@
-# PowerShell deployment script for @hr/zcatalyst-cli-plugin-react
+# PowerShell deployment script for @hrica/zcatalyst-cli-plugin-react
 # This script helps ensure a safe and consistent publishing process on Windows
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "🚀 Starting deployment process for @hr/zcatalyst-cli-plugin-react" -ForegroundColor Cyan
+Write-Host "Starting deployment process for @hrica/zcatalyst-cli-plugin-react" -ForegroundColor Cyan
 Write-Host ""
 
 # Check if we're on the main branch
 $currentBranch = git branch --show-current
 if ($currentBranch -ne "main" -and $currentBranch -ne "master") {
-    Write-Host "⚠️  Warning: You're not on the main/master branch (current: $currentBranch)" -ForegroundColor Yellow
+    Write-Host "Warning: You're not on the main/master branch (current: $currentBranch)" -ForegroundColor Yellow
     $continue = Read-Host "Continue anyway? (y/N)"
     if ($continue -ne "y" -and $continue -ne "Y") {
-        Write-Host "❌ Deployment cancelled" -ForegroundColor Red
+        Write-Host "Deployment cancelled" -ForegroundColor Red
         exit 1
     }
 }
@@ -20,25 +20,25 @@ if ($currentBranch -ne "main" -and $currentBranch -ne "master") {
 # Check for uncommitted changes
 $gitStatus = git status -s
 if ($gitStatus) {
-    Write-Host "⚠️  You have uncommitted changes:" -ForegroundColor Yellow
+    Write-Host "You have uncommitted changes:" -ForegroundColor Yellow
     git status -s
     $continue = Read-Host "Continue anyway? (y/N)"
     if ($continue -ne "y" -and $continue -ne "Y") {
-        Write-Host "❌ Deployment cancelled" -ForegroundColor Red
+        Write-Host "Deployment cancelled" -ForegroundColor Red
         exit 1
     }
 }
 
 # Check if logged in to npm
-Write-Host "📦 Checking npm authentication..." -ForegroundColor Cyan
+Write-Host "Checking npm authentication..." -ForegroundColor Cyan
 try {
     $npmUser = npm whoami 2>&1
     if ($LASTEXITCODE -ne 0) {
         throw "Not logged in"
     }
-    Write-Host "✅ Logged in as: $npmUser" -ForegroundColor Green
+    Write-Host "Logged in as: $npmUser" -ForegroundColor Green
 } catch {
-    Write-Host "❌ You're not logged in to npm" -ForegroundColor Red
+    Write-Host "You're not logged in to npm" -ForegroundColor Red
     Write-Host "Please run: npm login" -ForegroundColor Yellow
     exit 1
 }
@@ -103,7 +103,7 @@ Write-Host "📌 New version: $newVersion" -ForegroundColor Cyan
 Write-Host ""
 
 # Final confirmation
-Write-Host "⚠️  Ready to publish @hr/zcatalyst-cli-plugin-react@$newVersion to npm" -ForegroundColor Yellow
+Write-Host "⚠️  Ready to publish @hrica/zcatalyst-cli-plugin-react@$newVersion to npm" -ForegroundColor Yellow
 $confirm = Read-Host "Are you sure? (y/N)"
 if ($confirm -ne "y" -and $confirm -ne "Y") {
     Write-Host "❌ Deployment cancelled" -ForegroundColor Red
@@ -117,7 +117,7 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Publishing failed" -ForegroundColor Red
     exit 1
 }
-Write-Host "✅ Successfully published @hr/zcatalyst-cli-plugin-react@$newVersion" -ForegroundColor Green
+Write-Host "✅ Successfully published @hrica/zcatalyst-cli-plugin-react@$newVersion" -ForegroundColor Green
 Write-Host ""
 
 # Push to git
@@ -130,7 +130,7 @@ Write-Host ""
 Write-Host "🎉 Deployment complete!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Cyan
-Write-Host "  1. Verify on npm: https://www.npmjs.com/package/@hr/zcatalyst-cli-plugin-react"
-Write-Host "  2. Test installation: npm install @hr/zcatalyst-cli-plugin-react"
+Write-Host "  1. Verify on npm: https://www.npmjs.com/package/@hrica/zcatalyst-cli-plugin-react"
+Write-Host "  2. Test installation: npm install @hrica/zcatalyst-cli-plugin-react"
 Write-Host "  3. Update documentation if needed"
 Write-Host "  4. Announce the release"

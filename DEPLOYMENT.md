@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This guide explains how to publish `@hr/zcatalyst-cli-plugin-react` to npm.
+This guide explains how to publish `@hrica/zcatalyst-cli-plugin-react` to npm.
 
 > **Note**: This is a fork of the official `zcatalyst-cli-plugin-react` from the Zoho Catalyst Team. See [FORK-NOTICE.md](FORK-NOTICE.md) for details.
 
@@ -88,10 +88,10 @@ npm publish
 Check that your package is published:
 
 ```bash
-npm view @hr/zcatalyst-cli-plugin-react
+npm view @hrica/zcatalyst-cli-plugin-react
 ```
 
-Or visit: https://www.npmjs.com/package/@hr/zcatalyst-cli-plugin-react
+Or visit: https://www.npmjs.com/package/@hrica/zcatalyst-cli-plugin-react
 
 ### 7. Push to Git
 
@@ -125,7 +125,7 @@ npm publish --tag beta
 Users can install beta versions:
 
 ```bash
-npm install @hr/zcatalyst-cli-plugin-react@beta
+npm install @hrica/zcatalyst-cli-plugin-react@beta
 ```
 
 ## Unpublishing (Emergency Only)
@@ -133,13 +133,13 @@ npm install @hr/zcatalyst-cli-plugin-react@beta
 If you need to unpublish (within 72 hours):
 
 ```bash
-npm unpublish @hr/zcatalyst-cli-plugin-react@1.0.0
+npm unpublish @hrica/zcatalyst-cli-plugin-react@1.0.0
 ```
 
 **Warning**: Unpublishing is discouraged. Use deprecation instead:
 
 ```bash
-npm deprecate @hr/zcatalyst-cli-plugin-react@1.0.0 "This version has critical bugs. Please upgrade to 1.0.1"
+npm deprecate @hrica/zcatalyst-cli-plugin-react@1.0.0 "This version has critical bugs. Please upgrade to 1.0.1"
 ```
 
 ## Automated Publishing (CI/CD)
@@ -180,7 +180,7 @@ After publishing:
 3. **Update Docs**: Ensure installation instructions reference the new package name
 4. **Test Installation**: Try installing in a fresh project:
    ```bash
-   npm install @hr/zcatalyst-cli-plugin-react
+   npm install @hrica/zcatalyst-cli-plugin-react
    ```
 
 ## Troubleshooting
@@ -188,8 +188,8 @@ After publishing:
 ### "You do not have permission to publish"
 
 - Ensure you're logged in: `npm whoami`
-- Check package name isn't taken: `npm view @hr/zcatalyst-cli-plugin-react`
-- Verify you have access to the `@hr` scope
+- Check package name isn't taken: `npm view @hrica/zcatalyst-cli-plugin-react`
+- Verify you have access to the `@hrica` scope
 
 ### "Package name too similar to existing package"
 

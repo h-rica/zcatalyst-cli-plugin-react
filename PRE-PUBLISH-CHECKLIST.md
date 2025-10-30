@@ -1,6 +1,6 @@
 # Pre-Publish Checklist
 
-Use this checklist before publishing `@hr/zcatalyst-cli-plugin-react` to npm.
+Use this checklist before publishing `@hrica/zcatalyst-cli-plugin-react` to npm.
 
 ## Code Quality
 
@@ -21,7 +21,7 @@ Use this checklist before publishing `@hr/zcatalyst-cli-plugin-react` to npm.
 ## Package Configuration
 
 - [ ] package.json version is correct
-- [ ] package.json name is `@hr/zcatalyst-cli-plugin-react`
+- [ ] package.json name is `@hrica/zcatalyst-cli-plugin-react`
 - [ ] package.json description is accurate
 - [ ] package.json keywords are relevant
 - [ ] package.json author/homepage/repository are correct
@@ -88,8 +88,8 @@ Use this checklist before publishing `@hr/zcatalyst-cli-plugin-react` to npm.
 
 After publishing, verify:
 
-- [ ] Package appears on npm: https://www.npmjs.com/package/@hr/zcatalyst-cli-plugin-react
-- [ ] Can install: `npm install @hr/zcatalyst-cli-plugin-react`
+- [ ] Package appears on npm: https://www.npmjs.com/package/@hrica/zcatalyst-cli-plugin-react
+- [ ] Can install: `npm install @hrica/zcatalyst-cli-plugin-react`
 - [ ] Installation works in a test project
 - [ ] Documentation links work
 - [ ] Git tags are pushed
@@ -111,12 +111,12 @@ npm test
 npm audit
 
 # Verify package info
-npm view @hr/zcatalyst-cli-plugin-react
+npm view @hrica/zcatalyst-cli-plugin-react
 
 # Test installation
 mkdir test-install && cd test-install
 npm init -y
-npm install @hr/zcatalyst-cli-plugin-react
+npm install @hrica/zcatalyst-cli-plugin-react
 ```
 
 ## Emergency Rollback
@@ -125,12 +125,12 @@ If something goes wrong after publishing:
 
 1. **Deprecate the version** (preferred):
    ```bash
-   npm deprecate @hr/zcatalyst-cli-plugin-react@1.0.0 "This version has issues. Please use 1.0.1"
+   npm deprecate @hrica/zcatalyst-cli-plugin-react@1.0.0 "This version has issues. Please use 1.0.1"
    ```
 
 2. **Unpublish** (only within 72 hours, not recommended):
    ```bash
-   npm unpublish @hr/zcatalyst-cli-plugin-react@1.0.0
+   npm unpublish @hrica/zcatalyst-cli-plugin-react@1.0.0
    ```
 
 3. **Publish a fix**:

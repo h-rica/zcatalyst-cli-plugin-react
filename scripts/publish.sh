@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Deployment script for @hr/zcatalyst-cli-plugin-react
+# Deployment script for @hrica/zcatalyst-cli-plugin-react
 # This script helps ensure a safe and consistent publishing process
 
 set -e  # Exit on error
 
-echo "🚀 Starting deployment process for @hr/zcatalyst-cli-plugin-react"
+echo "🚀 Starting deployment process for @hrica/zcatalyst-cli-plugin-react"
 echo ""
 
 # Check if we're on the main branch
@@ -99,7 +99,7 @@ echo "📌 New version: $NEW_VERSION"
 echo ""
 
 # Final confirmation
-echo "⚠️  Ready to publish @hr/zcatalyst-cli-plugin-react@$NEW_VERSION to npm"
+echo "⚠️  Ready to publish @hrica/zcatalyst-cli-plugin-react@$NEW_VERSION to npm"
 read -p "Are you sure? (y/N) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -110,7 +110,7 @@ fi
 # Publish to npm
 echo "📤 Publishing to npm..."
 if npm publish --access public; then
-    echo "✅ Successfully published @hr/zcatalyst-cli-plugin-react@$NEW_VERSION"
+    echo "✅ Successfully published @hrica/zcatalyst-cli-plugin-react@$NEW_VERSION"
     echo ""
     
     # Push to git
@@ -123,8 +123,8 @@ if npm publish --access public; then
     echo "🎉 Deployment complete!"
     echo ""
     echo "Next steps:"
-    echo "  1. Verify on npm: https://www.npmjs.com/package/@hr/zcatalyst-cli-plugin-react"
-    echo "  2. Test installation: npm install @hr/zcatalyst-cli-plugin-react"
+    echo "  1. Verify on npm: https://www.npmjs.com/package/@hrica/zcatalyst-cli-plugin-react"
+    echo "  2. Test installation: npm install @hrica/zcatalyst-cli-plugin-react"
     echo "  3. Update documentation if needed"
     echo "  4. Announce the release"
 else

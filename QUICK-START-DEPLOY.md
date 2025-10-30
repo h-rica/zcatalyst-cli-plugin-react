@@ -1,6 +1,6 @@
 # Quick Start: Deploy to npm
 
-This is a quick reference guide for deploying `@hr/zcatalyst-cli-plugin-react` to npm.
+This is a quick reference guide for deploying `@hrica/zcatalyst-cli-plugin-react` to npm.
 
 ## Prerequisites
 
@@ -71,13 +71,13 @@ The script will:
 
 ```bash
 # Check on npm
-npm view @hr/zcatalyst-cli-plugin-react
+npm view @hrica/zcatalyst-cli-plugin-react
 
 # Test installation
 mkdir test-project
 cd test-project
 npm init -y
-npm install @hr/zcatalyst-cli-plugin-react
+npm install @hrica/zcatalyst-cli-plugin-react
 ```
 
 ## Troubleshooting
@@ -99,8 +99,8 @@ npm publish --access public
 ```
 
 ### "Package name too similar"
-- The scoped package `@hr/zcatalyst-cli-plugin-react` should be unique
-- Verify the scope `@hr` is available to you
+- The scoped package `@hrica/zcatalyst-cli-plugin-react` should be unique
+- Verify the scope `@hrica` is available to you
 
 ## Important Notes
 
@@ -112,7 +112,7 @@ npm publish --access public
 
 ## Next Steps After Publishing
 
-1. Verify on npm: https://www.npmjs.com/package/@hr/zcatalyst-cli-plugin-react
+1. Verify on npm: https://www.npmjs.com/package/@hrica/zcatalyst-cli-plugin-react
 2. Test installation in a real project
 3. Update documentation if needed
 4. Announce the release

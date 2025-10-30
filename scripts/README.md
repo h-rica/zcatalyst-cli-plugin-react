@@ -1,6 +1,6 @@
 # Deployment Scripts
 
-This directory contains scripts to help with publishing `@hr/zcatalyst-cli-plugin-react` to npm.
+This directory contains scripts to help with publishing `@hrica/zcatalyst-cli-plugin-react` to npm.
 
 ## Available Scripts
 

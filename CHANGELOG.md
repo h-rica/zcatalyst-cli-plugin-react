@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 This package is a fork of the [official zcatalyst-cli-plugin-react](https://www.npmjs.com/package/zcatalyst-cli-plugin-react) maintained by the Zoho Catalyst Team. The fork was created to add support for modern build tools (Vite) while maintaining full backward compatibility with the original Webpack-based implementation.
 
 **Original Package**: `zcatalyst-cli-plugin-react` by Zoho Catalyst Team  
-**Fork**: `@hr/zcatalyst-cli-plugin-react` by HR  
+**Fork**: `@hrica/zcatalyst-cli-plugin-react` by HR  
 **Key Addition**: Vite support with automatic build tool detection
 
 ---
@@ -69,7 +69,7 @@ This package is a fork of the [official zcatalyst-cli-plugin-react](https://www.
 
 ### Changed
 
-- **Package Name**: Changed from `zcatalyst-cli-plugin-react` to `@hr/zcatalyst-cli-plugin-react`
+- **Package Name**: Changed from `zcatalyst-cli-plugin-react` to `@hrica/zcatalyst-cli-plugin-react`
 - **Version**: Bumped to 1.0.0 for initial scoped package release
 - **Architecture**: Refactored to use adapter pattern for build tool support
 - **Path Resolution**: Enhanced to support both Vite and Webpack project structures
@@ -132,7 +132,7 @@ See the [Vite Migration Guide](docs/vite-migration-guide.md) for detailed instru
 
 ## Upgrade Instructions
 
-### From zcatalyst-cli-plugin-react to @hr/zcatalyst-cli-plugin-react
+### From zcatalyst-cli-plugin-react to @hrica/zcatalyst-cli-plugin-react
 
 1. Uninstall the old package:
    ```bash
@@ -141,13 +141,13 @@ See the [Vite Migration Guide](docs/vite-migration-guide.md) for detailed instru
 
 2. Install the new scoped package:
    ```bash
-   npm install @hr/zcatalyst-cli-plugin-react
+   npm install @hrica/zcatalyst-cli-plugin-react
    ```
 
 3. Update your catalyst.json (if needed):
    ```json
    {
-     "plugins": ["@hr/zcatalyst-cli-plugin-react"]
+     "plugins": ["@hrica/zcatalyst-cli-plugin-react"]
    }
    ```
 

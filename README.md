@@ -7,8 +7,8 @@
 <center><h1>Catalyst React Plugin (Modernized)</h1></center>
 
 ![catalyst](https://img.shields.io/badge/%E2%9A%A1-catalyst-blue.svg)
-![npm](https://img.shields.io/npm/v/@hr/zcatalyst-cli-plugin-react.svg?color=blue)
-![license](https://img.shields.io/npm/l/@hr/zcatalyst-cli-plugin-react.svg?color=brightgreen)
+![npm](https://img.shields.io/npm/v/@hrica/zcatalyst-cli-plugin-react.svg?color=blue)
+![license](https://img.shields.io/npm/l/@hrica/zcatalyst-cli-plugin-react.svg?color=brightgreen)
 ![build-tools](https://img.shields.io/badge/build--tools-Vite%20%7C%20Webpack-orange)
 <br>
 
@@ -58,7 +58,7 @@ npm create vite@latest my-app -- --template react-ts
 
 # Install the plugin
 cd my-app
-npm install @hr/zcatalyst-cli-plugin-react --save-dev
+npm install @hrica/zcatalyst-cli-plugin-react --save-dev
 
 # Configure catalyst.json
 # The plugin will automatically detect Vite
@@ -75,14 +75,14 @@ The plugin can be installed in the global NPM **_node_modules_** directory and c
 
 **Installation**
 ```bash
-npm install @hr/zcatalyst-cli-plugin-react -g
+npm install @hrica/zcatalyst-cli-plugin-react -g
 ```
 **_catalyst.json_**
 ```json
 {
     "client": {
         "source": "react-app",
-        "plugin": "@hr/zcatalyst-cli-plugin-react"
+        "plugin": "@hrica/zcatalyst-cli-plugin-react"
     }
 }
 ```
@@ -93,7 +93,7 @@ The plugin can be installed in the local **_node_modules_** directory of the Rea
 **Installation**
 ```bash
 # to be executed within the React App directory
-npm install @hr/zcatalyst-cli-plugin-react --save-dev
+npm install @hrica/zcatalyst-cli-plugin-react --save-dev
 ```
 
 **_catalyst.json_**
@@ -101,7 +101,7 @@ npm install @hr/zcatalyst-cli-plugin-react --save-dev
 {
     "client": {
         "source": "react-app",
-        "plugin": "react-app/node_modules/@hr/zcatalyst-cli-plugin-react"
+        "plugin": "react-app/node_modules/@hrica/zcatalyst-cli-plugin-react"
     }
 }
 ```
@@ -123,7 +123,7 @@ This project is a fork of the [official zcatalyst-cli-plugin-react](https://www.
 - **License**: MIT
 
 ### This Fork
-- **Package**: `@hr/zcatalyst-cli-plugin-react`
+- **Package**: `@hrica/zcatalyst-cli-plugin-react`
 - **Maintainer**: Harivonjy Rica
 - **Key Enhancement**: Added Vite support alongside existing Webpack support
 - **Architecture**: Introduced adapter pattern for multi-build-tool support

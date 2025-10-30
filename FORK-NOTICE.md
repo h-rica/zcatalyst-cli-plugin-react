@@ -2,7 +2,7 @@
 
 ## About This Project
 
-**`@hr/zcatalyst-cli-plugin-react`** is a fork of the official **`zcatalyst-cli-plugin-react`** package created and maintained by the **Zoho Catalyst Team**.
+**`@hrica/zcatalyst-cli-plugin-react`** is a fork of the official **`zcatalyst-cli-plugin-react`** package created and maintained by the **Zoho Catalyst Team**.
 
 ## Original Project
 
@@ -32,7 +32,7 @@ This fork was created to:
 - ❌ No Vite support
 - ❌ Tightly coupled to Webpack
 
-### This Fork (`@hr/zcatalyst-cli-plugin-react`)
+### This Fork (`@hrica/zcatalyst-cli-plugin-react`)
 - ✅ Webpack support (unchanged)
 - ✅ Create React App support (unchanged)
 - ✅ TypeScript support (unchanged)
@@ -48,12 +48,12 @@ This fork is **100% backward compatible** with the original plugin. If you're us
 ```bash
 # Replace original plugin
 npm uninstall zcatalyst-cli-plugin-react
-npm install @hr/zcatalyst-cli-plugin-react
+npm install @hrica/zcatalyst-cli-plugin-react
 
 # Update catalyst.json
 {
   "client": {
-    "plugin": "@hr/zcatalyst-cli-plugin-react"
+    "plugin": "@hrica/zcatalyst-cli-plugin-react"
   }
 }
 ```
@@ -75,7 +75,7 @@ Your existing Webpack projects will continue to work exactly as before.
 - You prefer official, vendor-supported packages
 - You want the most conservative, stable option
 
-### Use This Fork (`@hr/zcatalyst-cli-plugin-react`)
+### Use This Fork (`@hrica/zcatalyst-cli-plugin-react`)
 - You want to use Vite with Catalyst
 - You want automatic build tool detection
 - You want the latest features and improvements

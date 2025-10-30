@@ -1,8 +1,8 @@
-# Deployment Summary for @hr/zcatalyst-cli-plugin-react
+# Deployment Summary for @hrica/zcatalyst-cli-plugin-react
 
 ## Package Information
 
-- **Package Name**: `@hr/zcatalyst-cli-plugin-react`
+- **Package Name**: `@hrica/zcatalyst-cli-plugin-react`
 - **Version**: 1.0.0
 - **Type**: Scoped package (requires `--access public` on first publish)
 - **Fork Of**: `zcatalyst-cli-plugin-react` by Zoho Catalyst Team
@@ -78,7 +78,7 @@ chmod +x scripts/publish.sh
 
 After publishing, verify:
 
-1. **Package on npm**: https://www.npmjs.com/package/@hr/zcatalyst-cli-plugin-react
+1. **Package on npm**: https://www.npmjs.com/package/@hrica/zcatalyst-cli-plugin-react
 2. **Installation works**:
    ```bash
    npm install @hr/zcatalyst-cli-plugin-react
