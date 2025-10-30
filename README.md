@@ -155,7 +155,7 @@ MIT License - Same as the original project
 
 ### Support
 
-- **Issues**: [GitHub Issues](https://github.com/hr/zcatalyst-cli-plugin-react/issues)
+- **Issues**: [GitHub Issues](https://github.com/h-rica/zcatalyst-cli-plugin-react/issues)
 - **Documentation**: [docs/](docs/)
 - **Original Plugin**: [zcatalyst-cli-plugin-react](https://www.npmjs.com/package/zcatalyst-cli-plugin-react)
 - **Catalyst Platform**: [Zoho Catalyst](https://www.zoho.com/catalyst/)

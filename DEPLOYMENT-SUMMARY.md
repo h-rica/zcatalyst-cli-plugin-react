@@ -202,8 +202,8 @@ If something goes wrong:
 
 - **Maintainer**: Harivonjy Rica
 - **Email**: contact.harivonjy@gmail.com
-- **Repository**: https://github.com/hr/zcatalyst-cli-plugin-react
-- **Issues**: https://github.com/hr/zcatalyst-cli-plugin-react/issues
+- **Repository**: https://github.com/h-rica/zcatalyst-cli-plugin-react
+- **Issues**: https://github.com/h-rica/zcatalyst-cli-plugin-react/issues
 
 ---
 

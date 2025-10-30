@@ -203,7 +203,7 @@ After publishing:
 
 For issues with deployment:
 - npm support: https://www.npmjs.com/support
-- GitHub Issues: https://github.com/hr/zcatalyst-cli-plugin-react/issues
+- GitHub Issues: https://github.com/h-rica/zcatalyst-cli-plugin-react/issues
 
 ## Security
 

@@ -155,6 +155,6 @@ See the [Vite Migration Guide](docs/vite-migration-guide.md) for detailed instru
 
 ## Support
 
-- **Issues**: https://github.com/hr/zcatalyst-cli-plugin-react/issues
-- **Documentation**: https://github.com/hr/zcatalyst-cli-plugin-react/tree/main/docs
+- **Issues**: https://github.com/h-rica/zcatalyst-cli-plugin-react/issues
+- **Documentation**: https://github.com/h-rica/zcatalyst-cli-plugin-react/tree/main/docs
 - **Migration Help**: See [Vite Migration Guide](docs/vite-migration-guide.md)

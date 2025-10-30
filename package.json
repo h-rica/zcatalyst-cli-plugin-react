@@ -8,10 +8,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/hr/zcatalyst-cli-plugin-react.git"
+		"url": "https://github.com/h-rica/zcatalyst-cli-plugin-react.git"
 	},
 	"bugs": {
-		"url": "https://github.com/hr/zcatalyst-cli-plugin-react/issues"
+		"url": "https://github.com/h-rica/zcatalyst-cli-plugin-react/issues"
 	},
 	"scripts": {
 		"test:unit": "jest --config jest.config.js",
@@ -47,7 +47,7 @@
 		"zcatalyst-cli-plugin-react"
 	],
 	"author": "Harivonjy Rica <contact.harivonjy@gmail.com>",
-	"homepage": "https://github.com/hr/zcatalyst-cli-plugin-react#readme",
+	"homepage": "https://github.com/h-rica/zcatalyst-cli-plugin-react#readme",
 	"license": "MIT",
 	"devDependencies": {
 		"eslint": "^8.5.0",

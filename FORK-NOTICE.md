@@ -93,7 +93,7 @@ Contributions to this fork are welcome! However, please note:
 ## Support
 
 ### For This Fork
-- **Issues**: https://github.com/hr/zcatalyst-cli-plugin-react/issues
+- **Issues**: https://github.com/h-rica/zcatalyst-cli-plugin-react/issues
 - **Documentation**: See [docs/](docs/) directory
 - **Maintainer**: Harivonjy Rica
 
