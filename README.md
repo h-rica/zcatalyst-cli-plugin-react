@@ -18,6 +18,7 @@ The official plugin for [Catalyst CLI](https://www.npmjs.com/package/zcatalyst-c
 ## Plugin Capabilities
 - This plugin allows you to serve and debug the React Application with Catalyst.
 - With this plugin you'll be able to build a production ready version of your React Application and deploy it to Catalyst remote console.
+- Supports both **Vite** and **Webpack** build tools with automatic detection.
 <br>
 
 ## Prerequisites
@@ -28,6 +29,13 @@ npm install -g zcatalyst-cli
 ```
 Check this [documentation](https://catalyst.zoho.com/help/cli-init.html#React) to get started with React in Catalyst
 > Note: zcatalyst-cli of versions 1.11.0 and above supports this plugin.
+
+## Build Tool Support
+This plugin automatically detects and supports both modern and traditional React build tools:
+- **Vite** - Fast, modern build tool with HMR (recommended for new projects)
+- **Webpack** - Traditional build tool via Create React App (react-scripts)
+
+The plugin automatically detects which build tool your project uses. See [Build Tool Detection](docs/build-tool-detection.md) for more details.
 <br>
 
 ## Configuring Plugin
