@@ -1,181 +1,127 @@
 # Build Tool Detection
 
-The Catalyst React plugin automatically detects whether your project uses Vite or Webpack as its build tool.
-
-## Overview
-
-The plugin includes a `BuildToolDetector` module that examines your project's `package.json` and configuration files to determine which build tool to use. This allows the plugin to support both modern Vite-based projects and traditional Webpack/Create React App projects.
-
-## Detection Logic
-
-The detector uses the following priority order:
-
-### 1. Vite Detection (Highest Priority)
-
-The plugin detects Vite if any of the following are present:
-- `vite` in package.json dependencies or devDependencies
-- `vite.config.js` configuration file
-- `vite.config.ts` configuration file
-- `vite.config.mjs` configuration file
-- `vite.config.mts` configuration file
-
-### 2. Webpack Detection
-
-The plugin detects Webpack if any of the following are present:
-- `webpack` in package.json dependencies or devDependencies
-- `react-scripts` in package.json (Create React App)
-- `webpack.config.js` configuration file
-
-### 3. No Build Tool Found
-
-If neither Vite nor Webpack is detected, the plugin will throw an error with installation instructions.
-
-## Priority Rules
-
-**When both Vite and Webpack are detected, Vite takes priority.**
-
-This design decision supports gradual migration scenarios where a project might have both build tools during a transition period. The plugin will automatically use Vite in these cases.
-
-## Error Handling
-
-If no supported build tool is detected, the plugin provides a helpful error message that includes:
-- List of supported build tools
-- Installation commands for each tool
-- Links to official documentation
-
-Example error message:
-```
-No supported build tool detected.
-Please install one of the following:
-  - Vite: npm install vite @vitejs/plugin-react --save-dev
-  - Webpack: npm install react-scripts --save-dev
-
-For more information, visit:
-  - Vite: https://vitejs.dev/guide/
-  - Create React App: https://create-react-app.dev/
-```
-
-## Usage in Plugin Code
-
-The detector is used internally by the plugin during the validation phase:
-
-```javascript
-const BuildToolDetector = require('./detector');
-
-// Detect build tool
-const detector = new BuildToolDetector(projectPath);
-const buildTool = await detector.detect(); // Returns 'vite' or 'webpack'
-
-// Get display name
-const displayName = BuildToolDetector.getBuildToolName(buildTool); // 'Vite' or 'Webpack'
-```
-
-## Logging
-
-The detector logs its findings for debugging purposes:
-```
-[react-plugin]: Detected build tool: Vite
-  Vite detected: package.json config file
-```
-
-## API Reference
-
-### `BuildToolDetector`
-
-#### Constructor
-```javascript
-new BuildToolDetector(userDir: string)
-```
-Creates a new detector instance for the specified project directory.
-
-#### Methods
-
-##### `detect(): Promise<'vite' | 'webpack'>`
-Detects and returns the build tool type. Throws an error if no supported build tool is found.
-
-##### `hasVite(): boolean`
-Checks if Vite is present in the project.
-
-##### `hasWebpack(): boolean`
-Checks if Webpack is present in the project.
-
-##### `hasDependency(name: string): boolean`
-Checks if a specific dependency exists in package.json.
-
-##### `hasConfigFile(filename: string): boolean`
-Checks if a configuration file exists in the project directory.
-
-#### Static Methods
-
-##### `BuildToolDetector.getBuildToolName(buildToolType: string): string`
-Returns a human-readable display name for a build tool type.
+The Catalyst React plugin automatically detects which build tool your project uses and configures itself accordingly. This allows seamless support for both modern Vite projects and traditional Create React App (Webpack) projects.
 
 ## Supported Build Tools
 
-### Vite
-- **Version Support:** Vite 3.x and above
-- **Configuration Files:** vite.config.js, vite.config.ts, vite.config.mjs, vite.config.mts
-- **Package Name:** `vite`
-- **Typical Setup:** Modern React projects, especially those created with `npm create vite@latest`
+### Vite (Recommended for new projects)
+- **Fast HMR** - Lightning-fast Hot Module Replacement
+- **Modern ESM** - Native ES modules support
+- **Optimized builds** - Rollup-based production builds
+- **TypeScript** - First-class TypeScript support
 
-### Webpack
-- **Version Support:** Webpack 5.x (via react-scripts 5.x)
-- **Configuration Files:** webpack.config.js
-- **Package Names:** `webpack`, `react-scripts`
-- **Typical Setup:** Create React App projects, custom Webpack configurations
+### Webpack (via Create React App)
+- **Mature ecosystem** - Battle-tested tooling
+- **Full compatibility** - Works with existing CRA projects
+- **Zero config** - Managed by react-scripts
 
-## Migration Scenarios
+## Detection Logic
 
-### Migrating from Webpack to Vite
+The plugin uses the following priority order to detect your build tool:
 
-If you're migrating a project from Webpack to Vite:
+### 1. Vite Detection (Highest Priority)
+The plugin detects Vite if **any** of the following conditions are met:
+- `vite` is listed in `dependencies` or `devDependencies` in package.json
+- A Vite configuration file exists:
+  - `vite.config.js`
+  - `vite.config.ts`
+  - `vite.config.mjs`
 
-1. Install Vite and its dependencies
-2. Create a `vite.config.js` file
-3. The plugin will automatically detect and use Vite
-4. You can keep Webpack installed during the transition
-5. Remove Webpack dependencies once migration is complete
+### 2. Webpack Detection
+The plugin detects Webpack if **any** of the following conditions are met:
+- `react-scripts` is listed in `dependencies` or `devDependencies`
+- `webpack` is listed in `dependencies` or `devDependencies`
+- `webpack.config.js` exists in the project root
 
-The plugin's priority system ensures Vite is used even if Webpack is still present in the project.
+### 3. Priority Rules
+- **Vite takes precedence** - If both Vite and Webpack are detected, Vite will be used
+- This allows for gradual migration from Webpack to Vite
+
+## Environment Variables
+
+The plugin handles environment variables differently based on the detected build tool:
+
+### Vite Projects
+- Use the `VITE_` prefix for environment variables
+- Example: `VITE_API_URL`, `VITE_APP_TITLE`
+- Variables are exposed via `import.meta.env`
+
+### Webpack Projects
+- Use the `REACT_APP_` prefix for environment variables
+- Example: `REACT_APP_API_URL`, `REACT_APP_TITLE`
+- Variables are exposed via `process.env`
+
+### Environment Files
+Both build tools support the standard `.env` file hierarchy:
+- `.env` - Default environment variables
+- `.env.local` - Local overrides (not committed to git)
+- `.env.production` - Production-specific variables
+- `.env.production.local` - Local production overrides
+
+## Project Structure
+
+### Vite Project Structure
+```
+my-vite-app/
+├── index.html          # Entry HTML (at root)
+├── vite.config.js      # Vite configuration
+├── package.json
+├── src/
+│   ├── main.tsx        # Entry point (or main.jsx)
+│   ├── App.tsx
+│   └── ...
+└── public/             # Static assets
+```
+
+### Webpack (CRA) Project Structure
+```
+my-react-app/
+├── package.json
+├── public/
+│   └── index.html      # Entry HTML (in public/)
+└── src/
+    ├── index.tsx       # Entry point (or index.jsx)
+    ├── App.tsx
+    └── ...
+```
 
 ## Troubleshooting
 
-### "No supported build tool detected" Error
+### No Build Tool Detected
+If you see an error about no supported build tool being detected:
 
-**Cause:** Neither Vite nor Webpack is installed or configured in your project.
+1. **For Vite projects**, ensure you have:
+   ```bash
+   npm install vite @vitejs/plugin-react --save-dev
+   ```
 
-**Solution:** Install one of the supported build tools:
-
-For Vite:
-```bash
-npm install vite @vitejs/plugin-react --save-dev
-```
-
-For Webpack (Create React App):
-```bash
-npm install react-scripts --save-dev
-```
+2. **For Webpack projects**, ensure you have:
+   ```bash
+   npm install react-scripts --save-dev
+   ```
 
 ### Wrong Build Tool Detected
+If the wrong build tool is being detected:
 
-**Cause:** Multiple build tools are present and the priority system is selecting the wrong one.
+1. Check your `package.json` dependencies
+2. Look for conflicting configuration files
+3. Remember: Vite takes priority over Webpack
 
-**Solution:** Remove the unused build tool's dependencies and configuration files. Remember that Vite takes priority over Webpack.
+### Migration from Webpack to Vite
+If you're migrating from Webpack to Vite:
 
-### Configuration File Not Found
+1. Install Vite dependencies
+2. Create a `vite.config.js` file
+3. The plugin will automatically detect and use Vite
+4. Update environment variables from `REACT_APP_` to `VITE_` prefix
+5. Move `index.html` from `public/` to project root
+6. Update entry point from `src/index.tsx` to `src/main.tsx` (optional)
 
-**Cause:** The build tool is installed but no configuration file exists.
+## Debugging
 
-**Solution:** The plugin can detect build tools from package.json alone. However, for better control, create the appropriate configuration file:
-
-For Vite, create `vite.config.js`:
-```javascript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-export default defineConfig({
-  plugins: [react()]
-});
+To see which build tool was detected, check the CLI output when running commands:
+```
+Detected build tool: vite
 ```
 
-For Webpack, the plugin uses the configuration from react-scripts or your custom webpack.config.js.
+For more detailed debugging information, check the plugin logs during validation, build, or serve operations.

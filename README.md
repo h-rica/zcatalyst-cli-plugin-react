@@ -35,7 +35,24 @@ This plugin automatically detects and supports both modern and traditional React
 - **Vite** - Fast, modern build tool with HMR (recommended for new projects)
 - **Webpack** - Traditional build tool via Create React App (react-scripts)
 
-The plugin automatically detects which build tool your project uses. See [Build Tool Detection](docs/build-tool-detection.md) for more details.
+The plugin automatically detects which build tool your project uses based on your dependencies and configuration files.
+
+### Documentation
+- [Build Tool Detection](docs/build-tool-detection.md) - How the plugin detects your build tool
+- [Vite Migration Guide](docs/vite-migration-guide.md) - Step-by-step guide to migrate from Webpack to Vite
+
+### Quick Start with Vite
+```bash
+# Create a new Vite + React project
+npm create vite@latest my-app -- --template react-ts
+
+# Install the plugin
+cd my-app
+npm install zcatalyst-cli-plugin-react --save-dev
+
+# Configure catalyst.json
+# The plugin will automatically detect Vite
+```
 <br>
 
 ## Configuring Plugin
