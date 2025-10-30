@@ -1,5 +1,5 @@
 {
-	"name": "@hr/zcatalyst-cli-plugin-react",
+	"name": "@hrica/zcatalyst-cli-plugin-react",
 	"version": "1.0.0",
 	"description": "Fork of official zcatalyst-cli-plugin-react from Zoho Catalyst Team, modernized with Vite and Webpack support",
 	"main": "lib/index.js",
